@@ -7,6 +7,7 @@ export default async function handler(req, res) {
   let json = JSON.parse(url);
 
   res.json({
+    xid: json.data.metadata.id,
     queue_mode: json.data.info.view.queue_mode,
     collection_xid: json.data.info.view.collection_xid,
   });
