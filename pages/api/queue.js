@@ -6,21 +6,19 @@ export default async function handler(req, res) {
   url = url.replace(/\+/g, "");
   let json = JSON.parse(url);
 
-  const action = json.data.action;
-
   const output = {
     action: {
-      gesture: json.data.action?.gesture,
-      uuid: json.data.action?.uuid,
+      gesture: json.data.action?.gesture || null,
+      uuid: json.data.action?.uuid || null,
     },
     info: {
       view: {
-        collection_xid: json.data.info.view.collection_xid,
-        queue_mode: json.data.info.view.queue_mode,
+        collection_xid: json.data.info.view.collection_xid || null,
+        queue_mode: json.data.info.view.queue_mode || null,
       },
     },
     metadata: {
-      xid: json.data.metadata.id,
+      xid: json.data.metadata.id || null,
     },
   };
 
