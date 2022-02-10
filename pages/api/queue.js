@@ -15,6 +15,7 @@ export default async function handler(req, res) {
       view: {
         collection_xid: json.data.info.view.collection_xid || null,
         queue_mode: json.data.info.view.queue_mode || null,
+        video_index: json.data.info.view.video_index || null,
       },
     },
     metadata: {
